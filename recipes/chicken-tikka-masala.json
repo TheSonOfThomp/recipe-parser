@@ -1,0 +1,226 @@
+{
+  "title": "Chicken Tikka Masala",
+  "steps": [
+    {
+      "id": 1,
+      "verb": "Chop",
+      "ingredients": [
+        "1 onion"
+      ]
+    },
+    {
+      "id": 2,
+      "verb": "Mince",
+      "ingredients": [
+        "3 cloves garlic"
+      ]
+    },
+    {
+      "id": 3,
+      "verb": "Dice",
+      "ingredients": [
+        "3 chicken breasts"
+      ]
+    },
+    {
+      "id": 4,
+      "verb": "Season",
+      "ingredients": [
+        "#3",
+        "1 tsp salt"
+      ]
+    },
+    {
+      "id": 5,
+      "verb": "Fry medium heat until translucent",
+      "ingredients": [
+        "#1",
+        "#2",
+        "2 tbsp canola oil"
+      ]
+    },
+    {
+      "id": 6,
+      "verb": "Fry medium-high for 5 minutes",
+      "ingredients": [
+        "#3",
+        "2 tbsp canola oil"
+      ]
+    },
+    {
+      "id": 7,
+      "verb": "Set aside",
+      "ingredients": [
+        "#6"
+      ]
+    },
+    {
+      "id": 8,
+      "verb": "Mix",
+      "ingredients": [
+        "1 tsp salt",
+        "1 tsp fresh ginger",
+        "1 tsp cumin",
+        "1 tsp coriander",
+        "1 tsp paprika",
+        "1/2 tsp turmeric",
+        "1/2 tsp cayenne"
+      ]
+    },
+    {
+      "id": 9,
+      "verb": "Mix about 2 minutes",
+      "ingredients": [
+        "#5",
+        "#8"
+      ]
+    },
+    {
+      "id": 10,
+      "verb": "Simmer",
+      "ingredients": [
+        "#9",
+        "1 cup crushed tomatoes",
+        "1 cup plain yogurt",
+        "1 tsp garam masala",
+        "1 tbsp cilantro"
+      ]
+    },
+    {
+      "id": 11,
+      "verb": "Combine",
+      "ingredients": [
+        "#7",
+        "#10"
+      ]
+    },
+    {
+      "id": 12,
+      "verb": "Season",
+      "ingredients": [
+        "#11",
+        "1 tbsp lemon juice"
+      ]
+    }
+  ],
+  "tree": {
+    "id": 12,
+    "verb": "Season",
+    "ingredients": [
+      "1 tbsp lemon juice"
+    ],
+    "tree": [
+      {
+        "id": 11,
+        "verb": "Combine",
+        "ingredients": [],
+        "tree": [
+          {
+            "id": 7,
+            "verb": "Set aside",
+            "ingredients": [],
+            "tree": [
+              {
+                "id": 6,
+                "verb": "Fry medium-high for 5 minutes",
+                "ingredients": [
+                  "2 tbsp canola oil"
+                ],
+                "tree": [
+                  {
+                    "id": 3,
+                    "verb": "Dice",
+                    "ingredients": [
+                      "3 chicken breasts"
+                    ],
+                    "tree": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": 10,
+            "verb": "Simmer",
+            "ingredients": [
+              "1 cup crushed tomatoes",
+              "1 cup plain yogurt",
+              "1 tsp garam masala",
+              "1 tbsp cilantro"
+            ],
+            "tree": [
+              {
+                "id": 9,
+                "verb": "Mix about 2 minutes",
+                "ingredients": [],
+                "tree": [
+                  {
+                    "id": 5,
+                    "verb": "Fry medium heat until translucent",
+                    "ingredients": [
+                      "2 tbsp canola oil"
+                    ],
+                    "tree": [
+                      {
+                        "id": 1,
+                        "verb": "Chop",
+                        "ingredients": [
+                          "1 onion"
+                        ],
+                        "tree": []
+                      },
+                      {
+                        "id": 2,
+                        "verb": "Mince",
+                        "ingredients": [
+                          "3 cloves garlic"
+                        ],
+                        "tree": []
+                      }
+                    ]
+                  },
+                  {
+                    "id": 8,
+                    "verb": "Mix",
+                    "ingredients": [
+                      "1 tsp salt",
+                      "1 tsp fresh ginger",
+                      "1 tsp cumin",
+                      "1 tsp coriander",
+                      "1 tsp paprika",
+                      "1/2 tsp turmeric",
+                      "1/2 tsp cayenne"
+                    ],
+                    "tree": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "depth": 5,
+  "ingredientsList": [
+    "1 onion",
+    "3 cloves garlic",
+    "3 chicken breasts",
+    "1 tsp salt",
+    "2 tbsp canola oil",
+    "2 tbsp canola oil",
+    "1 tsp salt",
+    "1 tsp fresh ginger",
+    "1 tsp cumin",
+    "1 tsp coriander",
+    "1 tsp paprika",
+    "1/2 tsp turmeric",
+    "1/2 tsp cayenne",
+    "1 cup crushed tomatoes",
+    "1 cup plain yogurt",
+    "1 tsp garam masala",
+    "1 tbsp cilantro",
+    "1 tbsp lemon juice"
+  ],
+  "ingredientsCount": 18
+}
