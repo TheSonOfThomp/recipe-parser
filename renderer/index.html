@@ -49,13 +49,8 @@
     <script type="text/babel">
 
       const RecipeNode = ({id, verb, ingredients, tree, depth}) => {        
-
         return (
           <React.Fragment>
-            <span 
-              id={`step-${id}`}
-              className="verb" 
-            >{verb}</span>
             {
               tree && tree.map(node =>
               <div 
@@ -75,6 +70,10 @@
               </div>
               )
             }
+            <span
+              id={`step-${id}`}
+              className="verb"
+            >{verb}</span>
             {
               ingredients && ingredients.map(ing => <span className="ingredient" key={ing}>{ing}</span>)
             }

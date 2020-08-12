@@ -1,27 +1,35 @@
-type IStep = {
+type Step = {
   id: number;
   verb: string;
   ingredients: string[];
 }
 
-type ITreeNode = {
+type TreeNode = {
   id: number;
   verb: string;
   ingredients: string[];
-  tree: ITreeNode[];
+  tree: TreeNode[];
 }
 
-export const parseRecipeMarkdown = (recipe: string) => {
+type Recipe = {
+  title: string
+  steps: Array<Step>,
+  tree: TreeNode,
+  depth: number,
+  ingredientsList: Array<string>,
+}
+
+export const parseRecipe = (recipe: string):Recipe => {
   const STEP_DELINEATOR = /\[[0-9]+\]/g
   const VERB_DELINEATOR = /:\ /g
   const INGREDIENT_DELINEATOR = /\n|,/g
   const isRawIngredient = (ing:string) => !ing.includes('#')
   const isStepLink = (ing:string) => ing.includes('#')
-  const getStepById = (id: number, steps: IStep[]): IStep => steps[id - 1]
+  const getStepById = (id: number, steps: Step[]): Step => steps[id - 1]
   
   const [title, ...stepsArr] = recipe.split(STEP_DELINEATOR)
   
-  const steps:Array<IStep> = stepsArr.map((step, i) => {
+  const steps:Array<Step> = stepsArr.map((step, i) => {
     const [verb, ingredientsString] = step.split(VERB_DELINEATOR)
     const ingredients = ingredientsString
       .split(INGREDIENT_DELINEATOR)
@@ -43,7 +51,7 @@ export const parseRecipeMarkdown = (recipe: string) => {
   
   const lastStep = steps[steps.length-1]
     
-  const generateTree = ({id, verb, ingredients}:IStep):any => {
+  const generateTree = ({id, verb, ingredients}:Step):any => {
     const rawIngredients = ingredients.filter(isRawIngredient)
     const stepLinks = ingredients.filter(isStepLink)
   
@@ -61,7 +69,7 @@ export const parseRecipeMarkdown = (recipe: string) => {
     }
   }
   
-  const getTreeDepth = (tree: ITreeNode, depth = 0):number => {
+  const getTreeDepth = (tree: TreeNode, depth = 0):number => {
     if (tree.tree) {
       return Math.max(
         depth,
@@ -78,7 +86,6 @@ export const parseRecipeMarkdown = (recipe: string) => {
     steps,
     tree,
     depth,
-    ingredientsList: ingredients,
-    ingredientsCount : ingredients.length
+    ingredientsList: ingredients
   }
 }
