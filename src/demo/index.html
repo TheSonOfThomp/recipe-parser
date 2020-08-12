@@ -36,7 +36,6 @@
         align-items: center;
         text-align: center;
         justify-content: center;
-
       }
 
 
@@ -48,7 +47,9 @@
 
     <script type="text/babel">
 
-      const RecipeNode = ({id, verb, ingredients, tree, depth}) => {        
+      const RecipeNode = ({id, verb, ingredients, tree, depth}) => {
+        const stepLabel = `${verb} ${ingredients.join(', ')}`
+
         return (
           <React.Fragment>
             {
@@ -91,7 +92,7 @@
         }, [])
 
         return (
-          <div>
+          <React.Fragment>
             {recipe && (
               <React.Fragment>
               <h1>{recipe.title}</h1>
@@ -112,7 +113,7 @@
               </React.Fragment>
             )
           } 
-        </div>
+        </React.Fragment>
         )
       }
 

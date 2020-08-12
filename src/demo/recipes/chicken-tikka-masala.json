@@ -1,5 +1,6 @@
 {
   "title": "Chicken Tikka Masala",
+  "original": "Chicken Tikka Masala\n  [1] Chop: 1 onion\n  [2] Mince: 3 cloves garlic\n  [3] Dice: 3 chicken breasts\n  [4] Season: #3, 1 tsp salt\n  [5] Fry medium heat until translucent: #1, #2, 2 tbsp canola oil\n  [6] Fry medium-high for 5 minutes: #3, 2 tbsp canola oil\n  [7] Set aside: #6\n  [8] Mix: \n    1 tsp salt\n    1 tsp fresh ginger\n    1 tsp cumin\n    1 tsp coriander\n    1 tsp paprika\n    1/2 tsp turmeric\n    1/2 tsp cayenne\n  [9] Mix about 2 minutes: #5, #8\n  [10] Simmer: \n    #9\n    1 cup crushed tomatoes\n    1 cup plain yogurt\n    1 tsp garam masala\n    1 tbsp cilantro\n  [11] Combine: #7, #10\n  [12] Season: #11, 1 tbsp lemon juice\n",
   "steps": [
     {
       "id": 1,
@@ -221,6 +222,5 @@
     "1 tsp garam masala",
     "1 tbsp cilantro",
     "1 tbsp lemon juice"
-  ],
-  "ingredientsCount": 18
+  ]
 }
