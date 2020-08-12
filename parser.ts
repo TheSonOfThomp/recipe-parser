@@ -1,35 +1,13 @@
-type Step = {
-  id: number;
-  verb: string;
-  ingredients: string[];
-}
+import { Step, TreeNode, Recipe} from './types'
 
-type TreeNode = {
-  id: number;
-  verb: string;
-  ingredients: string[];
-  tree: TreeNode[];
-}
-
-type Recipe = {
-  title: string
-  steps: Array<Step>,
-  tree: TreeNode,
-  depth: number,
-  ingredientsList: Array<string>,
-}
-
-export const parseRecipe = (recipe: string):Recipe => {
+export const parseRecipe = (original: string):Recipe => {
   const STEP_DELINEATOR = /\[[0-9]+\]/g
   const VERB_DELINEATOR = /:\ /g
   const INGREDIENT_DELINEATOR = /\n|,/g
   const isRawIngredient = (ing:string) => !ing.includes('#')
   const isStepLink = (ing:string) => ing.includes('#')
   const getStepById = (id: number, steps: Step[]): Step => steps[id - 1]
-  
-  const [title, ...stepsArr] = recipe.split(STEP_DELINEATOR)
-  
-  const steps:Array<Step> = stepsArr.map((step, i) => {
+  const stringToStep = (step:string, i:number):Step => {
     const [verb, ingredientsString] = step.split(VERB_DELINEATOR)
     const ingredients = ingredientsString
       .split(INGREDIENT_DELINEATOR)
@@ -40,18 +18,15 @@ export const parseRecipe = (recipe: string):Recipe => {
       verb: verb.trim(),
       ingredients
     }
-  })
-  
-  const ingredients = steps.reduce((prev: Array<string>, step) => {
+  }
+  const stepsToIngredientsReducer = (prev: Array<string>, step:Step) => {
     step.ingredients
       .filter(ing => !ing.includes('#'))
       .forEach(ing => prev.push(ing))
     return prev
-  }, [])
-  
-  const lastStep = steps[steps.length-1]
-    
-  const generateTree = ({id, verb, ingredients}:Step):any => {
+  }
+
+  const generateTree = ({id, verb, ingredients}:Step):TreeNode => {
     const rawIngredients = ingredients.filter(isRawIngredient)
     const stepLinks = ingredients.filter(isStepLink)
   
@@ -77,15 +52,20 @@ export const parseRecipe = (recipe: string):Recipe => {
       )
     } else return depth
   }
-  
+
+  const [title, ...stepsArr] = original.split(STEP_DELINEATOR)
+  const steps: Array<Step> = stepsArr.map(stringToStep)
+  const ingredientsList = steps.reduce(stepsToIngredientsReducer, [])
+  const lastStep = steps[steps.length - 1]
   const tree = generateTree(lastStep)
   const depth = getTreeDepth(tree)
   
   return {
     title: title.trim(),
+    original,
     steps,
+    ingredientsList,
     tree,
     depth,
-    ingredientsList: ingredients
   }
 }
