@@ -1,8 +1,10 @@
 import React from 'react';
 import { Recipe } from "../types"
+import jss from "jss";
+import preset from 'jss-preset-default'
 import { parseRecipe } from '../parser';
 import { RecipeNode } from './RecipeNode';
-import { recipeStyles }  from './styles';
+import { styles }  from './styles';
 
 type RecipeComponentProps = {
   string?: string,
@@ -10,8 +12,11 @@ type RecipeComponentProps = {
   json?: Recipe,
 }
 
+jss.setup(preset())
+
 export const RecipeChart = ({string, json, children}:RecipeComponentProps ) => {
   const [recipe, setRecipe] = React.useState<Recipe>()
+  const [classes, setClasses] = React.useState<any>()
 
   React.useEffect(() => {
     if (json) {
@@ -29,24 +34,15 @@ export const RecipeChart = ({string, json, children}:RecipeComponentProps ) => {
   return (
     <React.Fragment>
       {recipe && (
-        <React.Fragment>
-          <div className="recipe"
-            style={{
-              ...recipeStyles,
-              'gridAutoColumns': `${recipe.depth}fr 1fr`
-            }}
-          >
-            <RecipeNode
-              id={recipe.tree.id}
-              verb={recipe.tree.verb}
-              ingredients={recipe.tree.ingredients}
-              tree={recipe.tree.tree}
-              depth={recipe.depth}
-            />
-          </div>
-        </React.Fragment>
-      )
-      }
+        <RecipeNode
+          className='recipe'
+          id={recipe.tree.id}
+          verb={recipe.tree.verb}
+          ingredients={recipe.tree.ingredients}
+          tree={recipe.tree.tree}
+          depth={recipe.depth}
+        />
+      )}
     </React.Fragment>
   )
 }
