@@ -6,17 +6,23 @@ import { recipeStyles }  from './styles';
 
 type RecipeComponentProps = {
   string?: string,
-  json?: Recipe
+  children?: React.ReactChild,
+  json?: Recipe,
 }
 
-export const RecipeChart = ({string, json}:RecipeComponentProps ) => {
+export const RecipeChart = ({string, json, children}:RecipeComponentProps ) => {
   const [recipe, setRecipe] = React.useState<Recipe>()
 
   React.useEffect(() => {
     if (json) {
       setRecipe(json)
+    } else if (children) {
+      const string = children as string
+      setRecipe(parseRecipe(string))
     } else if (string) {
       setRecipe(parseRecipe(string))
+    } else {
+      console.warn('Please provide a recipe for RecipeChart');
     }
   }, [])
 

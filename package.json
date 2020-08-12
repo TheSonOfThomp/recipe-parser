@@ -1,6 +1,6 @@
 {
   "name": "@thesonofthomp/recipe-parser",
-  "version": "0.0.4",
+  "version": "0.0.6",
   "description": "",
   "main": "dist/index.js",
   "types": "dist/types.d.ts",
