@@ -4,7 +4,7 @@ Chicken Tikka Masala
   [3] Dice: 3 chicken breasts
   [4] Season: #3, 1 tsp salt
   [5] Fry medium heat until translucent: #1, #2, 2 tbsp canola oil
-  [6] Fry medium-high for 5 minutes: #3, 2 tbsp canola oil
+  [6] Fry medium-high for 5 minutes: #4, 2 tbsp canola oil
   [7] Set aside: #6
   [8] Mix: 
     1 tsp salt
