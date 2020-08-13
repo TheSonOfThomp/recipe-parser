@@ -4,7 +4,7 @@ Write recipes in a Markdown-like syntax, and display them as a flowchart, [Cooki
 
 Turn this:
 ```
-Kraft Dinner (Mac & Cheese)
+Kraft Dinner
   [1] Boil: 6 cups water
   [2] Cook for 6 minutes: #1, macaroni
   [3] Drain: #2
@@ -19,7 +19,7 @@ into this:
 
 ![kd-example](./kd-example.png)
 
-Check out some more live examples at [thesonofthomp.com](https://www.thesonofthomp.com/recipes)
+Check out some more live examples at [thesonofthomp.com/recipes](https://www.thesonofthomp.com/recipes)
 
 
 # RecipeMD syntax
