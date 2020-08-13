@@ -11,6 +11,9 @@
     "build": "tsc",
     "prepare": "npm run build"
   },
+  "repository": {
+    "url": "https://github.com/TheSonOfThomp/recipe-parser"
+  },
   "author": "Adam Thompson",
   "license": "ISC",
   "peerDependencies": {
