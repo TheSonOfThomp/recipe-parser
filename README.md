@@ -19,6 +19,8 @@ into this:
 
 ![kd-example](./kd-example.png)
 
+Check out some more live examples at [thesonofthomp.com](https://www.thesonofthomp.com/recipes)
+
 
 # RecipeMD syntax
 
