@@ -1,0 +1,81 @@
+{
+  "title": "Kraft Dinner",
+  "original": "Kraft Dinner\n  [1] Boil: 6 cups water\n  [2] Cook for 6 minutes: #1, macaroni\n  [3] Drain: #2\n  [4] Stir: #3, 1/4 cup butter, 1/4 cup milk, powdered cheese",
+  "steps": [
+    {
+      "id": 1,
+      "verb": "Boil",
+      "ingredients": [
+        "6 cups water"
+      ]
+    },
+    {
+      "id": 2,
+      "verb": "Cook for 6 minutes",
+      "ingredients": [
+        "#1",
+        "macaroni"
+      ]
+    },
+    {
+      "id": 3,
+      "verb": "Drain",
+      "ingredients": [
+        "#2"
+      ]
+    },
+    {
+      "id": 4,
+      "verb": "Stir",
+      "ingredients": [
+        "#3",
+        "1/4 cup butter",
+        "1/4 cup milk",
+        "powdered cheese"
+      ]
+    }
+  ],
+  "ingredientsList": [
+    "6 cups water",
+    "macaroni",
+    "1/4 cup butter",
+    "1/4 cup milk",
+    "powdered cheese"
+  ],
+  "tree": {
+    "id": 4,
+    "verb": "Stir",
+    "ingredients": [
+      "1/4 cup butter",
+      "1/4 cup milk",
+      "powdered cheese"
+    ],
+    "tree": [
+      {
+        "id": 3,
+        "verb": "Drain",
+        "ingredients": [],
+        "tree": [
+          {
+            "id": 2,
+            "verb": "Cook for 6 minutes",
+            "ingredients": [
+              "macaroni"
+            ],
+            "tree": [
+              {
+                "id": 1,
+                "verb": "Boil",
+                "ingredients": [
+                  "6 cups water"
+                ],
+                "tree": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "depth": 3
+}

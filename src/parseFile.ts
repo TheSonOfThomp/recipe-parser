@@ -1,8 +1,10 @@
 import * as fs from 'fs'
-import { kebabCase } from 'lodash';
 import { parseRecipe } from './parser'
 
-fs.readFile(`./${process.argv[2]}`, (err, data) => {
+const filePath = process.argv[2]
+fs.readFile(`./${filePath}`, (err, data) => {
   const recipeJSON = parseRecipe(data.toString())
-  fs.writeFileSync(`./recipes/${kebabCase(recipeJSON.title)}.json`, JSON.stringify(recipeJSON, null, 2))
+  const route = filePath.slice(0, filePath.lastIndexOf('/'))
+  const filename = recipeJSON.title.replace(/( )/g, '-').toLowerCase()
+  fs.writeFileSync(`${route}/${filename}.json`, JSON.stringify(recipeJSON, null, 2))
 })
