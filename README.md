@@ -46,7 +46,15 @@ Ingredients are the subject of the step, what you're taking the action on. Ingre
 ## Gotchas
 Recipes must end in one step that brings all ingredients together (otherwise the chart will only display one section of the recipe). It's best to think of a recipe like a tree where the final product is the trunk, each ingredient is a leaf, and each step is a branch connecting leaves or smaller branches to the trunk.
 
+
+
 # Usage
+
+Install the pakage from [npm](https://www.npmjs.com/package/@thesonofthomp/recipe-parser)
+```
+npm install @thesonofthomp/recipe-parser
+```
+
 ## Utility Function
 
 Use the utility function to parse a string into an abstract recipe object
