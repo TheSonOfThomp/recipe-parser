@@ -9,6 +9,7 @@ export type TreeNode = {
   verb: string;
   ingredients: string[];
   tree: TreeNode[];
+  depth?: number
 }
 
 export type Recipe = {
@@ -18,4 +19,11 @@ export type Recipe = {
   tree: TreeNode,
   depth: number,
   ingredientsList: Array<string>,
+}
+
+export type RecipeComponentProps = {
+  string?: string,
+  children?: React.ReactChild,
+  json?: Recipe,
+  recipe?: Recipe,
 }

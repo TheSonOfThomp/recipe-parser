@@ -1,5 +1,5 @@
 import { parseRecipe } from "./parser";
-import { RecipeChart } from './renderer/RecipeChart'
+import { RecipeChart } from './react/RecipeChart'
 
 export { 
   parseRecipe,

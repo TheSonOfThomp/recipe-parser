@@ -29,18 +29,24 @@ export const parseRecipe = (original: string):Recipe => {
   const generateTree = ({id, verb, ingredients}:Step):TreeNode => {
     const rawIngredients = ingredients.filter(isRawIngredient)
     const stepLinks = ingredients.filter(isStepLink)
-  
-    return {
+    const tree = [
+      ...stepLinks.map(step => {
+        const linkId = parseInt(step.replace('#', ''))
+        const link = getStepById(linkId, steps)
+        return generateTree(link)
+      })
+    ]
+    const node = {
       id,
       verb,
       ingredients: rawIngredients,
-      tree: [
-        ...stepLinks.map(step => {
-          const linkId = parseInt(step.replace('#', ''))
-          const link = getStepById(linkId, steps)
-          return generateTree(link)
-        })
-      ]
+      tree
+    }
+    const depth = getTreeDepth(node)
+
+    return {
+      ...node,
+      depth
     }
   }
   

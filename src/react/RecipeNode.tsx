@@ -17,9 +17,10 @@ jss.setup(preset())
 
 export const RecipeNode = ({ className, id, verb, ingredients, tree, depth }: RecipeNodeProps) => {
   const { classes } = jss.createStyleSheet(styles(depth + 1)).attach();
+  
   return (
     <div
-      className={`${className || 'sub-steps'} ${classes.subStep}`}
+      className={`${className || 'sub-steps'} ${classes.recipe_chart_subStep}`}
       id={`step-${id}`}
     >
       {
@@ -34,10 +35,10 @@ export const RecipeNode = ({ className, id, verb, ingredients, tree, depth }: Re
           />
         )
       }
-      <span className={`verb ${classes.verb}`} id={`action-${id}`}>{verb}</span>
+      <span className={`${classes.recipe_chart_verb}`} id={`action-${id}`}>{verb}</span>
       {
         ingredients && ingredients.map(ing => (
-          <span className={`ingredient ${classes.ingredient}`} key={ing}>{ing}</span>
+          <span className={`${classes.recipe_chart_ingredient}`} key={ing}>{ing}</span>
         ))
       }
     </div>

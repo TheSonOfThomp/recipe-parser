@@ -1,0 +1,9 @@
+{
+  "version": "v1",
+  "packages": {
+    "@thesonofthomp/recipe-parser": {
+      "signature": "1681d449bc3b46ed5818b5522a9c880b",
+      "file": true
+    }
+  }
+}
