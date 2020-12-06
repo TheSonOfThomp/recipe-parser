@@ -25,7 +25,7 @@ Check out some more live examples at [thesonofthomp.com/recipes](https://www.the
 # RecipeMD syntax
 
 ## Title
-Add the title of your recipe as the first line of your recipe file.
+Add the title of your recipe as the first line of your recipe file. (this is optional)
 
 ## Steps
 A step is an individual action in the recipe. Declare a step using square brackets with a number (note: steps must be declared in order). Reference another step in other steps using the `#` character followed by the step number.
