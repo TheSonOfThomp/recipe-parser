@@ -84,11 +84,13 @@ This component accepts a child string in RecipeMD syntax, or a `json` prop that 
 **Example:**
 
 ```tsx
-import { RecipeChart } from '@thesonofthomp/recipe-parser'
+import { RecipeComponent } from '@thesonofthomp/recipe-parser/dist/react'
+// you can also import just the chart or list
+import { RecipeChart, RecipeList } from '@thesonofthomp/recipe-parser/dist/react'
 
 const myRecipe = () => {
   return (
-    <RecipeChart>
+    <RecipeComponent>
       Kraft Dinner (Mac & Cheese)
         [1] Boil: 6 cups water
         [2] Cook for 6 minutes: #1, macaroni
@@ -98,7 +100,7 @@ const myRecipe = () => {
           1/4 cup butter, 
           1/4 cup milk, 
           powdered cheese
-    </RecipeChart>
+    </RecipeComponent>
   )
 }
 ```
