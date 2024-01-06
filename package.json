@@ -1,6 +1,6 @@
 {
   "name": "@thesonofthomp/recipe-parser",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "",
   "main": "dist/index.js",
   "types": "dist/types.d.ts",
@@ -28,6 +28,7 @@
     "jss": "^10.3.0",
     "jss-preset-default": "^10.3.0",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "typescript": "^4.9.5"
   }
 }
