@@ -19,8 +19,8 @@
   "peerDependencies": {
     "jss": "^10.3.0",
     "jss-preset-default": "^10.3.0",
-    "react": "^16.x",
-    "react-dom": "^16.x"
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
   },
   "devDependencies": {
     "@types/node": "^14.0.27",
