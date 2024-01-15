@@ -1,5 +1,11 @@
 # @thesonofthomp/recipe-parser
 
+## 0.2.1
+
+### Patch Changes
+
+- 7d30f64: Fixes a bug where <RecipeComponent> could not accept other react nodes as children
+
 ## 0.2.0
 
 ### Minor Changes
