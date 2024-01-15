@@ -24,4 +24,19 @@ describe("RecipeComponent", () => {
     expect(chart).not.toBeUndefined();
     expect(list).not.toBeUndefined();
   });
+
+  test("renders with react children", () => {
+    const result = render(
+      <RecipeComponent>
+        <>{kdRecipe}</>
+      </RecipeComponent>
+    );
+    const wrapper = result.queryByTestId("recipe-wrapper");
+    const chart = result.queryByTestId("recipe-chart");
+    const list = result.queryByTestId("recipe-list");
+
+    expect(wrapper).not.toBeUndefined();
+    expect(chart).not.toBeUndefined();
+    expect(list).not.toBeUndefined();
+  });
 });
