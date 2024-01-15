@@ -12,6 +12,9 @@
     "prepare": "npm run build",
     "test": "jest"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "url": "https://github.com/TheSonOfThomp/recipe-parser"
   },
