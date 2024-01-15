@@ -15,7 +15,7 @@ export const RecipeChart = (props: RecipeComponentProps) => {
   const recipe = useRecipe(props);
 
   return (
-    <React.Fragment>
+    <div data-testid="recipe-chart">
       {recipe && (
         <RecipeNode
           className={classes.recipe_chart}
@@ -26,6 +26,6 @@ export const RecipeChart = (props: RecipeComponentProps) => {
           depth={recipe.depth}
         />
       )}
-    </React.Fragment>
+    </div>
   );
 };

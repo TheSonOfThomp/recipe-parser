@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { parseRecipe } from "../parser";
 import { RecipeComponentProps, Recipe, isRecipe } from "../types";
 
@@ -8,21 +8,19 @@ export const useRecipe = ({
   children,
   recipe,
 }: RecipeComponentProps): Recipe => {
-  const [recipeObject, setRecipe] = useState<Recipe>();
-
-  useEffect(() => {
+  const recipeObject = useMemo(() => {
     if (recipe && isRecipe(recipe)) {
-      setRecipe(recipe);
+      return recipe;
     } else if (json) {
-      setRecipe(json);
+      return json;
     } else if (children) {
       const string = children as string;
-      setRecipe(parseRecipe(string));
+      return parseRecipe(string);
     } else if (string) {
-      setRecipe(parseRecipe(string));
+      return parseRecipe(string);
     } else {
-      throw new Error(
-        `Please provide a recipe for RecipeChart. Received ${{
+      console.log(
+        `Recipe not found Received ${{
           string,
           json,
           children,
