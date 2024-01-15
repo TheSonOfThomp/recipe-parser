@@ -1,1 +1,1 @@
-export { parseRecipe } from "./parser";
+export { parseRecipe } from "./parseRecipe";
