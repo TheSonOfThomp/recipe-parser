@@ -1,7 +1,4 @@
-import { parseRecipe } from "./parser";
-import { RecipeChart } from './react/RecipeChart'
+import { parseRecipe } from "./parser/index";
+import { RecipeChart } from "./react/RecipeChart";
 
-export { 
-  parseRecipe,
-  RecipeChart
-}
+export { parseRecipe, RecipeChart };
