@@ -8,7 +8,7 @@
     "dist/**/*"
   ],
   "scripts": {
-    "build": "tsc",
+    "build": "tsc --project ./tsconfig.json",
     "prepare": "npm run build",
     "test": "jest"
   },
